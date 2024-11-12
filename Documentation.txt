@@ -1,5 +1,5 @@
 Course Class:
-Added Courses
+
 
 
 
@@ -9,7 +9,7 @@ Added Courses
 
 
 Supervisor Class:
-Added Search Function
+
 
 
 
