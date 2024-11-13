@@ -7,7 +7,7 @@ public class Course {
     public String getTitle {
       return title;
     }
-    public String grtInstructor {
+    public String getInstructor {
       return instructor;
     }
     public String getArea {
@@ -30,4 +30,5 @@ public class Course {
         this.area = area; 
        }
     }
+}
     
