@@ -1,11 +1,18 @@
 Course Class:
-Added A new course
-
-
-
-
-
-
+Course: represents the course of study.
+Title: represents the course title.
+Instructor: represents the name of the instructor.
+Area: represents the area of ​​the course.
+Course(String title, String instructor , String area):creates a new object of type Course.
+()get Title: returns the title.
+()get Instructor:returns the name of the Instructor.
+()get Area:returns the name of Area.
+setTitle(String Title):specifies the title.
+setInstructor(String Instructor):specifies the name of instructor.
+setArea(String Area):specifies the name of area.
+Getters:retrieves attribute values.
+Setters:Change attribute values.
+Constructor Optional:initializes a new chorus object with initial pin values.
 
 
 
