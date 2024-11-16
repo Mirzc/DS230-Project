@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 // Course Class
-public class Course {
+public class Testing {
     // Attributes
     private String title;
     private String instructor;
@@ -100,7 +100,8 @@ class Supervisor {
 
     public void displayCourses() {
         for (Course course : courses) {
-            System.out.println("Title: " + course.getTitle() + ", Instructor: " + course.getInstructor() + ", Area: " + course.getArea());
+            System.out.println("Title: " + course.getTitle() + ", Instructor: " + course.getInstructor() + ", Area: "
+                    + course.getArea());
         }
     }
 
@@ -163,7 +164,8 @@ public class Main {
                         System.out.println("No courses found with that title.");
                     } else {
                         for (Course course : titleResults) {
-                            System.out.println("Found: " + course.getTitle() + ", Instructor: " + course.getInstructor());
+                            System.out
+                                    .println("Found: " + course.getTitle() + ", Instructor: " + course.getInstructor());
                         }
                     }
                     break;
@@ -187,7 +189,8 @@ public class Main {
                         System.out.println("No courses found in that area.");
                     } else {
                         for (Course course : areaResults) {
-                            System.out.println("Found: " + course.getTitle() + ", Instructor: " + course.getInstructor());
+                            System.out
+                                    .println("Found: " + course.getTitle() + ", Instructor: " + course.getInstructor());
                         }
                     }
                     break;
