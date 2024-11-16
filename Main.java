@@ -6,6 +6,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Supervisor supervisor = new Supervisor();
         boolean running = true;
+        UI ui = new UI(supervisor);
+        ui.show();
 
         while (running) {
             System.out.println("1. Add Course");
