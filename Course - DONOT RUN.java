@@ -13,6 +13,26 @@ public class Course {
     return instructor;
   }
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+// Course Class
+public class Course {
+  // Attributes
+  private String title;
+  private String instructor;
+  private String area;
+
+  // Getters
+  public String getTitle() {
+    return title;
+  }
+
+  public String getInstructor() {
+    return instructor;
+  }
+
   public String getArea() {
     return area;
   }
