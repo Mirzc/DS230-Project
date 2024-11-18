@@ -103,4 +103,11 @@ class Supervisor {
             System.out.println("No title notFound in: " + subjectInstructor);
         }
     }
+    public void addCourse(String title, String instructor, String area) 
+    {
+        Course newCourse = new Course(title, instructor, area);
+        this.title.add(newCourse);
+        System.out.println("The Course has been " + newCourse.title +  " added: ");
+    }
+    
 }

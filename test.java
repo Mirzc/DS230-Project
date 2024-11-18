@@ -1,0 +1,61 @@
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class test {
+    private Supervisor supervisor;
+
+    @BeforeEach
+    void setUp() {
+        supervisor = new Supervisor();
+    }
+
+    @Test
+    void testAddCourse() {
+        // Arrange
+        int initialSize = supervisor.title.size();
+        
+        // Act
+        supervisor.addCourse("Advanced Java", "Dr. Smith", "Riyadh");
+        
+        // Assert
+        assertEquals(initialSize + 1, supervisor.title.size(), "Course list size should increase by 1");
+        Course addedCourse = supervisor.title.get(supervisor.title.size() - 1);
+        assertEquals("Advanced Java", addedCourse.getTitle());
+        assertEquals("Dr. Smith", addedCourse.getInstructor());
+        assertEquals("Riyadh", addedCourse.getArea());
+    }
+
+    @Test
+    void testSearchTitle() {
+        // Act
+        String searchPhrase = "Intro to Data Science";
+        supervisor.searchtitle(searchPhrase);
+
+        // Verify output manually or refactor the method to return results instead of printing.
+    }
+
+    @Test
+    void testDisplayAllTitles() {
+        // Act and Assert
+        assertDoesNotThrow(() -> supervisor.displayAlltitle(), "displayAlltitle should not throw any exceptions");
+    }
+
+    @Test
+    void testDisplayTitleByArea() {
+        // Act
+        String area = "Dammam";
+        supervisor.displaytitleByarea(area);
+
+        // Verify output manually or refactor the method to return results instead of printing.
+    }
+
+    @Test
+    void testDisplayTitleBySubjectInstructor() {
+        // Act
+        String subjectInstructor = "Dammam";
+        supervisor.displaytitleBySubjectInstructor(subjectInstructor);
+
+        // Verify output manually or refactor the method to return results instead of printing.
+    }
+}
