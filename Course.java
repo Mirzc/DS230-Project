@@ -4,9 +4,9 @@ import java.util.List;
 // Course Class
 public class Course {
     // Attributes
-    private String title;
-    private String instructor;
-    private String area;
+    public String title;
+    public String instructor;
+    public String area;
 
     // Getters
     public String getTitle() {
@@ -44,71 +44,63 @@ public class Course {
 
 // Supervisor Class
 class Supervisor {
-    private List<Course> courses;
+    public List<Course> title;
 
     public Supervisor() {
-        courses = new ArrayList<>();
-        // Initialize with sample courses
-        initializeSampleCourses();
+        title = new ArrayList<>();
+        title.add(new Course("Intro to Data Science", "Dr. Mohammed", "Dammam"));
+        title.add(new Course("Islam 101", "Dr. Ahmed", "Dammam"));
+        title.add(new Course("Mathamatcis: Algebra", "Dr. Khalid", "Riyadh"));
+        title.add(new Course("Ethics for Data Science", "Dr. Ali", "Jeddah"));
     }
 
-    private void initializeSampleCourses() {
-        courses.add(new Course("Math 101", "Dr. Ahmed", "Dammam"));
-        courses.add(new Course("Islm 101", "Dr. Hamed", "Dammam"));
-        courses.add(new Course("Eng 101", "Dr. Khalid", "Jeddah"));
-        courses.add(new Course("Physics 101", "Dr. Fahad", "Riyadh"));
-    }
+    public void displayAlltitle() {
+        System.out.println("Available title:");
+        for (int i = 0; i < title.size(); i++) {
+            System.out.println((i + 1) + ". " + title.get(i));
+                        }
+            }
 
-    public void addCourse(Course course) {
-        courses.add(course);
-    }
-
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public List<Course> searchByTitle(String title) {
-        List<Course> result = new ArrayList<>();
-        for (Course course : courses) {
-            if (course.getTitle().equalsIgnoreCase(title)) {
-                result.add(course);
+    public void searchtitle(String phrase)   
+    {
+        System.out.println("Search Results:");
+        boolean notFound = false;
+        for (Course course : title) {
+            if (course.title.equalsIgnoreCase(phrase) || course.instructor.equalsIgnoreCase(phrase))
+            {                   System.out.println(course);
+                                        notFound = true;
             }
         }
-        return result;
-    }
-
-    public List<Course> searchByInstructor(String instructor) {
-        List<Course> result = new ArrayList<>();
-        for (Course course : courses) {
-            if (course.getInstructor().equalsIgnoreCase(instructor)) {
-                result.add(course);
-            }
-        }
-        return result;
-    }
-
-    public List<Course> searchByArea(String area) {
-        List<Course> result = new ArrayList<>();
-        for (Course course : courses) {
-            if (course.getArea().equalsIgnoreCase(area)) {
-                result.add(course);
-            }
-        }
-        return result;
-    }
-
-    public void displayCourses() {
-        for (Course course : courses) {
-            System.out.println("Title: " + course.getTitle() + ", Instructor: " + course.getInstructor() + ", Area: "
-                    + course.getArea());
+        if (!notFound) {
+            System.out.println("No matches notFound for: " + phrase);
         }
     }
 
-    public void displayCoursesByArea(String area) {
-        for (Course course : courses) {
-            if (course.getArea().equalsIgnoreCase(area)) {
-                System.out.println("Title: " + course.getTitle() + ", Instructor: " + course.getInstructor());
+    public void displaytitleByarea(String area) {
+        System.out.println("title in " + area + ":");
+        boolean notFound = false;
+        for (Course subject : title) {
+            if (subject.area.equalsIgnoreCase(area)) {
+                System.out.println(subject);
+                notFound = true;
             }
+        }
+        if (!notFound) {
+            System.out.println("No title notFound in: " + area);
+        }
+    }
+
+   public void displaytitleBySubjectInstructor(String subjectInstructor) {
+        System.out.println("title in " + subjectInstructor + ":");
+        boolean notFound = false;
+        for (Course subject : title) {
+            if (subject.area.equalsIgnoreCase(subjectInstructor)) {
+                System.out.println(subject);
+                notFound = true;
+            }
+        }
+        if (!notFound) {
+            System.out.println("No title notFound in: " + subjectInstructor);
         }
     }
 }
