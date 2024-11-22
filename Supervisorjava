@@ -1,7 +1,7 @@
-class Supervisor {
+class Superviso {
     public List<Course> title;
 
-    public Supervisor() {
+    public Superviso() {
         title = new ArrayList<>();
         title.add(new Course("Intro to Data Science", "Dr. Mohammed", "Dammam"));
         title.add(new Course("Islam 101", "Dr. Ahmed", "Dammam"));
