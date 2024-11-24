@@ -53,6 +53,7 @@ class Course {
 class Supervisor {
     public List<Course> course;
 
+    // Sample Data
     public Supervisor() {
         course = new ArrayList<>();
         course.add(new Course("Intro to Data Science", "Dr. Mohammed", "Dammam"));
@@ -61,6 +62,7 @@ class Supervisor {
         course.add(new Course("Ethics for Data Science", "Dr. Ali", "Jeddah"));
     }
 
+    // display all courses
     public void displayAllCourses() {
         System.out.println("Available Courses:");
         for (int i = 0; i < course.size(); i++) {
@@ -78,12 +80,13 @@ class Supervisor {
                 notFound = true;
             }
         }
-        if (!notFound) {
+        if (!notFound) { // Error handling
             System.out.println("No matches Found for: " + phrase);
         }
         return results;
     }
 
+    // display by area
     public void displayCourseByarea(String area) {
         System.out.println("title in " + area + ":");
         boolean notFound = false;
@@ -93,11 +96,12 @@ class Supervisor {
                 notFound = true;
             }
         }
-        if (!notFound) {
+        if (!notFound) { // Error handling
             System.out.println("No title notFound in: " + area);
         }
     }
 
+    // display by instructor
     public void displaytitleByInstructor(String Instructor) {
         System.out.println("title in " + Instructor + ":");
         boolean notFound = false;
@@ -107,11 +111,12 @@ class Supervisor {
                 notFound = true;
             }
         }
-        if (!notFound) {
+        if (!notFound) { // Error handling
             System.out.println("No title notFound in: " + Instructor);
         }
     }
 
+    // add course
     public void addCourse(String title, String instructor, String area) {
         Course newCourse = new Course(title, instructor, area);
         this.course.add(newCourse);
@@ -147,7 +152,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean isRunning = true;
         int choice = -1;
-        while (isRunning) {
+        while (isRunning) { // loop to prevent crashes and allow the user to exit gracefully and options to
+                            // be displayed
             System.out.println("\n <3 Course Management System <3 ");
             System.out.println("1. Add Course");
             System.out.println("2. Display All Courses");
@@ -156,7 +162,7 @@ public class Main {
             System.out.println("5. Display Courses by Area");
             System.out.println("6. Exit");
 
-            try {
+            try { // Error handling
                 System.out.print("Insert your input: ");
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
